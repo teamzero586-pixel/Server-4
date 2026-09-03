@@ -1,0 +1,18 @@
+{
+  "name": "mrf-relay-service",
+  "version": "1.0.0",
+  "description": "Standalone service that handles Server 4 (MRF SMS) number purchases on Heroku, where a single request can run up to ~30s — unlike Vercel's free plan, which hard-kills anything over ~10s. The frontend calls this directly (bypassing Vercel) specifically for buying a Server 4 number, so the long wait for a slow MRF response happens here instead of running into Vercel's limit.",
+  "main": "server.js",
+  "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}
